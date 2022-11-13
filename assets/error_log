@@ -1,0 +1,10 @@
+[09-Nov-2017 06:05:03 America/New_York] PHP Deprecated:  Function eregi() is deprecated in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 9
+[09-Nov-2017 06:05:03 America/New_York] PHP Notice:  Undefined variable: errors in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 13
+[09-Nov-2017 06:09:07 America/New_York] PHP Deprecated:  Function eregi() is deprecated in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 9
+[09-Nov-2017 06:09:07 America/New_York] PHP Notice:  Undefined variable: errors in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 13
+[09-Nov-2017 06:11:54 America/New_York] PHP Deprecated:  Function eregi() is deprecated in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 9
+[09-Nov-2017 06:11:54 America/New_York] PHP Notice:  Undefined variable: errors in /home/themehovel/html.themehovel.com/bzone/assets/mailer.php on line 13
+[21-Mar-2018 08:35:39 America/New_York] PHP Deprecated:  Function eregi() is deprecated in /home/themehovel/html.themehovel.com/api/assets/mailer.php on line 10
+[21-Mar-2018 08:35:39 America/New_York] PHP Notice:  Undefined variable: errors in /home/themehovel/html.themehovel.com/api/assets/mailer.php on line 14
+[21-Mar-2018 08:37:39 America/New_York] PHP Deprecated:  Function eregi() is deprecated in /home/themehovel/html.themehovel.com/api/assets/mailer.php on line 10
+[21-Mar-2018 08:37:39 America/New_York] PHP Notice:  Undefined variable: errors in /home/themehovel/html.themehovel.com/api/assets/mailer.php on line 14
