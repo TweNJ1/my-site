@@ -16,7 +16,7 @@ else{
     $values = array ('name','email','message','subject');
     $required = array('name','email','subject','message');
    
-    $your_email = "hamidweb15@gmail.com";
+    $your_email = "gaalmartin43@gmail.com";
     $email_subject = "New Message: ".$_POST['subject'];
     $email_content = "new message:\n";
   
