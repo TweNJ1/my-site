@@ -10,7 +10,7 @@ if ( ! $terms) {
     die("Terms must be accepted");
 }   
 
-$host = "localhost";
+$host = "itself-recommended.at.ply.gg:55957";
 $dbname = "message_db";
 $username = "root";
 $password = "";
