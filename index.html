@@ -1,61 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TweNJI's site</title>
+    <title>Beállítások mentéssel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .settings-box {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        .settings-box label {
+            display: block;
+            margin: 5px 0;
+        }
+        .settings-box input {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Üdv!</h1>
-    <p>
-        A A köré irható kör
-        Def. A sik két oldalpontjával egyenlő távolságra lévo pontok
-        halmaza a két pont álal meghatározott szakasz felezőmerölegesek pontjai
-        Tétel: A oldalfelezömerõlegesei egy pontban metszik egymást
-        Ez a pont a köré irható középpontja.
-        Bizonyítás:
-        fc: minden pontja egyenlö távolságra van A, és B csúcsoktól
-        fa: minden pontja egyenlo távolságra van B, és C csúcsoktól
-        fc^ fa- 0 (fc és fa az O pontban metszik egymást.)
-        egyenlõ távolságra van A, és B csúcsoktól,
-        O pont: rajta van az fc egyenesen
-        egyenlő távolságra van B és C csúcsoktól
-        illeszkedik fa-ra is
-        Következtetés: O pont a mindhárom csúcsától egyenlõ távolságra van
-        [-' A harmadik oldal felezőmerőlegese is átmegy az O ponton.
-        A A köré írható kõr középpontja az O pont.
-        Sugara: r OA=OB=OC
-        AA-be irható kõr
-        Def. sik két metszö egyenesétöl egyenlo távolságra lévõ pontok
-        az egyenes által meghatározott szög felezõ egyenesén vannak.
-        Tétel: A belső szögfelezõi egy pontban metszik egymást.
-        Ez a pont A-be irható kör középpontja
-        Bizonyítás:
-        Aa szögfelezöje (). ennek minden pontja egyenlo távolságra vad a A b és c oldalától.
-        A B szögfelezõje (g). ennek minden pontja egyenlõ távolságra van a > a, és c oldalától.
-        f^g=K
-        K pont illeszkedik f egyenesre
-        egyenlo távolságra van b, és c oldaltól
-        pont illeszkedik bn egyenesre
-        egyenlo távolságra van a és C oldaltól.
-        K
-        Következtetés:] K egyenlo távolságra van a A mindhárom oldalätól.
-        Y szõgfelezöje i 1s átmegy aK ponton.
-        t
-        Pithagorasz tětel:
-        Egy A csak akkor, és akkor derékszõgū, ha a befogók hosszának négyzetösszege egyenlo
-        az átfogó hosszának négyzetével.
-        T-(a+b)*
-        1. T-(a+b)"a#+b2+4*a*b/2
-        2. - a+8-90°=180° /-90°
-        a+B-90°
-        c oldalú négyszõgünk nem NÉGYZET
-        Is=cl
-        T-(a+b)"-a"+b2+4*a a*b/2
-        a'+b2+4*a*b/2=c2+4*a*b2
-        atb?c²
-    </p>
-cig
+
+    <button onclick="toggleSettings()">Beállítások</button>
+
+    <div class="settings-box" id="settingsBox">
+        <label for="bgColor">Háttérszín:</label>
+        <input type="color" id="bgColor" onchange="saveSettings()">
+
+        <label for="textColor">Betűszín:</label>
+        <input type="color" id="textColor" onchange="saveSettings()">
+    </div>
+
+    <script>
+        function toggleSettings() {
+            let box = document.getElementById("settingsBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+        function saveSettings() {
+            let bgColor = document.getElementById("bgColor").value;
+            let textColor = document.getElementById("textColor").value;
+
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = textColor;
+
+            document.cookie = `bgColor=${bgColor}; path=/; max-age=31536000`; // 1 évig érvényes
+            document.cookie = `textColor=${textColor}; path=/; max-age=31536000`;
+        }
+
+        function getCookie(name) {
+            let cookies = document.cookie.split('; ');
+            for (let cookie of cookies) {
+                let [key, value] = cookie.split('=');
+                if (key === name) return value;
+            }
+            return null;
+        }
+
+        function loadSettings() {
+            let savedBgColor = getCookie("bgColor");
+            let savedTextColor = getCookie("textColor");
+
+            if (savedBgColor) {
+                document.body.style.backgroundColor = savedBgColor;
+                document.getElementById("bgColor").value = savedBgColor;
+            }
+
+            if (savedTextColor) {
+                document.body.style.color = savedTextColor;
+                document.getElementById("textColor").value = savedTextColor;
+            }
+        }
+
+        window.onload = loadSettings;
+    </script>
+
 </body>
 </html>
